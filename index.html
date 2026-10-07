@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Matteos 13. Geburtstag 🏁</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#111;color:#fff;font-family:Arial,sans-serif;text-align:center}
+main{max-width:900px;margin:auto;padding:25px 15px 70px;min-height:100vh;
+background:linear-gradient(135deg,#111 0%,#292929 55%,#111 100%)}
+h1{font-size:clamp(35px,8vw,70px);font-style:italic;text-transform:uppercase;
+text-shadow:4px 4px #000;margin:10px 0}h1 b{color:#e21b23}
+.kart{font-size:65px}.sub{font-size:22px;font-weight:bold}
+.card{margin:22px 0;padding:25px;border:3px solid white;border-radius:22px;
+background:#181818;box-shadow:0 9px #000}
+.buttons{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+button{padding:22px 8px;border:3px solid white;border-radius:15px;background:#e21b23;
+color:white;font-weight:900;font-size:19px;cursor:pointer;box-shadow:0 6px #700}
+button:hover{transform:translateY(-2px)}
+.info{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.info div{padding:16px;border:2px solid #777;border-radius:13px;background:#292929}
+.label{display:block;color:#bbb;font-size:13px;text-transform:uppercase;margin-bottom:7px}
+.value{font-weight:bold}.invite{display:none}
+.check{font-size:26px;letter-spacing:5px}
+@media(max-width:650px){.buttons,.info{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main>
+<div class="kart">🏁 🏎️ 🏁</div>
+<h1>Matteos <b>13.</b> Geburtstag</h1>
+<p class="sub">Vollgas, Rennstrecke &amp; Go-Kart!</p>
+
+<section class="card" id="start">
+<p><b>WER BIST DU?</b><br>Wähle deinen Namen und entdecke deine persönliche Einladung!</p>
+<div class="buttons">
+<button onclick="go('Noel')">ICH BIN NOEL</button>
+<button onclick="go('Noa')">ICH BIN NOA</button>
+<button onclick="go('Ien')">ICH BIN IEN</button>
+</div>
+<p class="check">⬛⬜⬛⬜⬛⬜⬛⬜</p>
+</section>
+
+<section class="card invite" id="invite">
+<div class="kart">🏎️</div>
+<h2>Hey <span id="name"></span>! 🏁</h2>
+<p><b>Du bist eingeladen zu Matteos 13. Geburtstag!</b></p>
+<p>Wir drehen gemeinsam eine Runde auf der Go-Kart-Strecke – Helm auf und Vollgas!</p>
+
+<div class="info">
+<div><span class="label">Datum</span><span class="value">Freitag, 16.10.2026</span></div>
+<div><span class="label">Treffpunkt</span><span class="value">15:30 Uhr</span></div>
+<div><span class="label">Wo?</span><span class="value">Bei Matteo zuhause</span></div>
+</div>
+
+<p><b>🏁 Matteo freut sich auf dich! 🏁</b></p>
+<p class="check">🏎️ 💨 🏁 💨 🏎️</p>
+<button onclick="back()">← Zurück zur Namensauswahl</button>
+</section>
+</main>
+
+<script>
+function go(x){
+ document.getElementById('name').textContent=x;
+ document.getElementById('start').style.display='none';
+ document.getElementById('invite').style.display='block';
+ window.scrollTo(0,0);
+}
+function back(){
+ document.getElementById('invite').style.display='none';
+ document.getElementById('start').style.display='block';
+ window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
